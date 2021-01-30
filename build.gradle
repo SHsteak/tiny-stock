@@ -2,11 +2,30 @@ plugins {
 	id 'org.springframework.boot' version '2.4.2'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'com.google.cloud.tools.jib' version '2.7.1'
 }
 
 group = 'com.ts'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+
+jib {
+    from {
+        image = "openjdk:8-alpine"
+    }
+    to {
+        image = "choshsh/tiny-stock"
+        tags = ["latest", "${project.name}-${project.version}".toString()]
+    }
+    container {
+        creationTime = "USE_CURRENT_TIMESTAMP"
+        //jvmFlags = ['-Dspring.profiles.active=dev', '-XX:+UseContainerSupport', '-Dserver.port=8080', '-Dfile.encoding=UTF-8']
+        jvmFlags = ['-XX:+UseContainerSupport', '-Dserver.port=8080', '-Dfile.encoding=UTF-8']
+        ports = ['8080']
+        labels = [maintainer: 'SHsteak <cho911115@gmail.com>']
+        user = "1000:1000"
+    }
+}
 
 configurations {
 	compileOnly {
