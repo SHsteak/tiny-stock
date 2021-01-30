@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloCTRL {
 	@GetMapping(value = "/api/hello")
 	String hello() {
-		return "Hello";
+		return "Hello Test!!";
 	}
 }
