@@ -49,3 +49,4 @@ management:
         include:
           - metrics
           - health
+          - mappings
