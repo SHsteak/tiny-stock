@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="nav">
+    <div v-if="showHeader" id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
@@ -9,10 +9,19 @@
 </template>
 
 <script lang="ts">
+import * as User from "@/common/User.ts";
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "MainApp"
+  name: "MainApp",
+  data() {
+    return {
+      showHeader: false
+    };
+  },
+  created() {
+    this.showHeader = User.loggedIn();
+  }
 });
 </script>
 
