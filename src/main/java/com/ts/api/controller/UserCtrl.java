@@ -26,7 +26,7 @@ public class UserCtrl {
 	List<UserEntity> list() {
 		List<UserEntity> list = new ArrayList<>();
 		Iterable<UserEntity> it = userRepo.findAll();
-		it.forEach(o -> list.add(o));
+		it.forEach(list::add);
 		return list;
 	}
 
@@ -41,7 +41,7 @@ public class UserCtrl {
 		return created;
 	}
 
-	@PutMapping(value = "/api/editor/{id}")
+	@PutMapping(value = "/api/user/{id}")
 	UserEntity update(@PathVariable("id") Long id,
 			@RequestBody UserEntity userEntity) {
 		userEntity.setId(id);
@@ -49,7 +49,7 @@ public class UserCtrl {
 		return updated;
 	}
 
-	@DeleteMapping(value = "/api/editor/{id}")
+	@DeleteMapping(value = "/api/user/{id}")
 	public void delete(@PathVariable("id") Long id) {
 		userRepo.deleteById(id);
 	}
