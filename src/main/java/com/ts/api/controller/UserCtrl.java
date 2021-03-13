@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ts.api.Entity.UserEntity;
+import com.ts.api.entity.UserEntity;
 import com.ts.api.repository.UserRepo;
 
 @RestController

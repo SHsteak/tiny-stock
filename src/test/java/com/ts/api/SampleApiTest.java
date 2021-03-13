@@ -13,22 +13,22 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.ts.api.hello.HelloCtrl;
+import com.ts.api.sample.SampleCtrl;
 
-@WebMvcTest(HelloApiTest.class)
-public class HelloApiTest {
+@WebMvcTest(SampleApiTest.class)
+public class SampleApiTest {
 	@Autowired
 	private MockMvc mockMvc;
 
 	@BeforeEach
 	public void before() {
-		mockMvc = MockMvcBuilders.standaloneSetup(HelloCtrl.class)
+		mockMvc = MockMvcBuilders.standaloneSetup(SampleCtrl.class)
 				.alwaysExpect(MockMvcResultMatchers.status().isOk()).build();
 	}
 
 	@Test
 	public void hello() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/api/hello")
+		mockMvc.perform(MockMvcRequestBuilders.get("/api/sample")
 				.accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
 				.andDo(MockMvcResultHandlers.print());
 	}

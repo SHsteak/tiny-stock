@@ -1,4 +1,4 @@
-package com.ts.api.Entity;
+package com.ts.api.entity;
 
 import javax.persistence.*;
 

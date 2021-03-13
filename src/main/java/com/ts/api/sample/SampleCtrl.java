@@ -1,12 +1,12 @@
-package com.ts.api.hello;
+package com.ts.api.sample;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HelloCtrl {
-	@GetMapping(value = "/api/hello")
+public class SampleCtrl {
+	@GetMapping(value = "/api/sample")
 	String hello() {
-		return "Hello Test!!";
+		return "Hello Test!";
 	}
 }
