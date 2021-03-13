@@ -19,7 +19,7 @@ public class BaseDateEntity {
 	/* 아래 컬럼은 모든 Table에 자동으로 create, insert, update */
 
 	@CreatedDate
-	@Column(name = "reg_date")
+	@Column(name = "reg_date", updatable = false)
 	private LocalDateTime regDate;
 
 	@LastModifiedDate
