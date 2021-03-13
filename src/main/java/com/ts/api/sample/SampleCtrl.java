@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class SampleCtrl {
 	@GetMapping(value = "/api/sample")
 	String hello() {
-		return "Hello Test!";
+		return "Hello! This is Sample.";
 	}
 }
