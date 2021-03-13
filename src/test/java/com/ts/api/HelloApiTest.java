@@ -13,7 +13,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.ts.api.hello.HelloCTRL;
+import com.ts.api.hello.HelloCtrl;
 
 @WebMvcTest(HelloApiTest.class)
 public class HelloApiTest {
@@ -22,7 +22,7 @@ public class HelloApiTest {
 
 	@BeforeEach
 	public void before() {
-		mockMvc = MockMvcBuilders.standaloneSetup(HelloCTRL.class)
+		mockMvc = MockMvcBuilders.standaloneSetup(HelloCtrl.class)
 				.alwaysExpect(MockMvcResultMatchers.status().isOk()).build();
 	}
 
